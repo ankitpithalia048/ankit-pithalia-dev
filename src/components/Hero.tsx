@@ -1,14 +1,14 @@
 import { motion } from "framer-motion";
 import { TypeAnimation } from "react-type-animation";
 import { Button } from "@/components/ui/button";
-import { Download, Mail, ChevronDown } from "lucide-react";
+import { Download, Mail } from "lucide-react";
 
 const Hero = () => {
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Animated Background */}
-      <div className="absolute inset-0 animated-gradient"></div>
+      {/* Purple Gradient Background */}
+      <div className="absolute inset-0 bg-gradient-to-br from-purple-600 via-blue-600 to-purple-700"></div>
       
       {/* Floating Elements */}
       <motion.div 
@@ -37,126 +37,119 @@ const Hero = () => {
         animate={{ opacity: 1 }}
         transition={{ duration: 0.8 }}
       >
-        <div className="max-w-4xl mx-auto text-center">
-          {/* Greeting */}
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="mb-6"
-          >
-            <span className="inline-block px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full text-sm font-medium text-white border border-white/20">
-              👋 Hello, I'm
-            </span>
-          </motion.div>
-
-          {/* Name */}
-          <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-            className="text-5xl md:text-7xl font-bold text-white mb-6"
-          >
-            Ankit Kumar{" "}
-            <span className="text-gradient bg-gradient-to-r from-accent to-accent-light bg-clip-text text-transparent">
-              Pithalia
-            </span>
-          </motion.h1>
-
-          {/* Title */}
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.6 }}
-            className="text-2xl md:text-3xl font-semibold text-white/90 mb-8"
-          >
-            Senior Software Engineer
-          </motion.h2>
-
-          {/* Typing Animation */}
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.8 }}
-            className="mb-12"
-          >
-            <div className="text-lg md:text-xl text-white/80 font-mono">
-              <TypeAnimation
-                sequence={[
-                  "Java Developer",
-                  2000,
-                  "AWS Cloud Expert",
-                  2000,
-                  "Quarkus Specialist",
-                  2000,
-                  "Spring Boot Architect",
-                  2000,
-                  "Terraform Engineer",
-                  2000,
-                  "ReactJS Developer",
-                  2000,
-                ]}
-                wrapper="span"
-                speed={50}
-                repeat={Infinity}
-                className="text-accent-light"
-              />
-            </div>
-            <p className="text-white/70 mt-4 max-w-2xl mx-auto leading-relaxed">
-              Result-oriented Software Developer with 4+ years of experience in full-stack development. 
-              Passionate about building scalable, efficient solutions using cutting-edge technologies.
-            </p>
-          </motion.div>
-
-          {/* CTA Buttons */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 1.0 }}
-            className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16"
-          >
-            <Button size="lg" className="btn-glow group">
-              <Download className="w-5 h-5 mr-2 group-hover:animate-bounce" />
-              Download Resume
-            </Button>
-            <Button 
-              size="lg" 
-              variant="outline" 
-              className="bg-white/10 backdrop-blur-sm border-white/30 text-white hover:bg-white/20 transition-all duration-300"
+        <div className="grid lg:grid-cols-2 gap-12 items-center">
+          {/* Left Content */}
+          <div className="space-y-8">
+            {/* Greeting */}
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="mb-6"
             >
-              <Mail className="w-5 h-5 mr-2" />
-              Contact Me
-            </Button>
-          </motion.div>
+              <span className="inline-block px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full text-sm font-medium text-white border border-white/20">
+                👋 Hello, I'm
+              </span>
+            </motion.div>
 
-          {/* Experience Badge */}
+            {/* Name */}
+            <motion.h1
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+              className="text-5xl md:text-7xl font-bold text-white mb-6"
+            >
+              Ankit Kumar{" "}
+              <span className="text-yellow-400">
+                Pithalia
+              </span>
+            </motion.h1>
+
+            {/* Title */}
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.6 }}
+              className="text-2xl md:text-3xl font-semibold text-white/90 mb-8"
+            >
+              An UI UX Designer
+            </motion.h2>
+
+            {/* Description */}
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.8 }}
+              className="mb-12"
+            >
+              <p className="text-white/70 text-lg leading-relaxed max-w-lg">
+                I'm a senior software engineer with 4+ years of experience building 
+                scalable applications using Java, AWS, and modern web technologies.
+              </p>
+            </motion.div>
+
+            {/* CTA Buttons */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 1.0 }}
+              className="flex flex-col sm:flex-row gap-4 mb-16"
+            >
+              <Button size="lg" className="bg-yellow-400 hover:bg-yellow-500 text-gray-900 font-semibold">
+                <Download className="w-5 h-5 mr-2" />
+                Get Started
+              </Button>
+              <Button 
+                size="lg" 
+                variant="outline" 
+                className="bg-white/10 backdrop-blur-sm border-white/30 text-white hover:bg-white/20 transition-all duration-300"
+              >
+                <Mail className="w-5 h-5 mr-2" />
+                My Projects
+              </Button>
+            </motion.div>
+          </div>
+
+          {/* Right Content - Profile Image */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 1.2 }}
-            className="inline-flex items-center gap-2 px-6 py-3 bg-white/10 backdrop-blur-sm rounded-full border border-white/20"
+            initial={{ opacity: 0, x: 30 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="relative lg:flex justify-center"
           >
-            <div className="w-2 h-2 bg-accent rounded-full animate-pulse"></div>
-            <span className="text-white/90 font-medium">4+ Years Experience</span>
+            <div className="relative w-full max-w-lg">
+              {/* Decorative orange circle */}
+              <div className="absolute top-0 right-0 w-96 h-96 bg-yellow-400 rounded-full opacity-90"></div>
+              
+              {/* Profile image container */}
+              <div className="relative z-10 bg-white/10 backdrop-blur-sm rounded-3xl p-8 border border-white/20 max-w-md mx-auto">
+                <div className="w-80 h-96 bg-gray-200 rounded-2xl flex items-center justify-center text-gray-600 overflow-hidden">
+                  {/* Placeholder for profile image */}
+                  <div className="w-full h-full bg-gradient-to-br from-gray-300 to-gray-400 flex items-center justify-center">
+                    <span className="text-6xl text-gray-600">👨‍💻</span>
+                  </div>
+                </div>
+              </div>
+              
+              {/* Floating badges */}
+              <motion.div
+                animate={{ y: [-10, 10, -10] }}
+                transition={{ duration: 4, repeat: Infinity }}
+                className="absolute top-20 -left-6 bg-white/90 backdrop-blur-sm rounded-xl p-3 shadow-lg"
+              >
+                <span className="text-gray-800 text-sm font-medium">4+ Years Experience</span>
+              </motion.div>
+              
+              <motion.div
+                animate={{ y: [10, -10, 10] }}
+                transition={{ duration: 3, repeat: Infinity }}
+                className="absolute bottom-32 -right-6 bg-yellow-400 rounded-xl p-3 shadow-lg"
+              >
+                <span className="text-gray-900 text-sm font-medium">Senior Engineer</span>
+              </motion.div>
+            </div>
           </motion.div>
         </div>
-
-        {/* Scroll Indicator */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 2 }}
-          className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
-        >
-          <motion.div
-            animate={{ y: [0, 10, 0] }}
-            transition={{ duration: 2, repeat: Infinity }}
-            className="flex flex-col items-center text-white/60 cursor-pointer"
-          >
-            <span className="text-sm mb-2">Scroll Down</span>
-            <ChevronDown className="w-6 h-6" />
-          </motion.div>
-        </motion.div>
       </motion.div>
     </section>
   );

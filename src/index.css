@@ -18,16 +18,16 @@ All colors MUST be HSL. Using purple/blue primary with orange accents.
     --popover-foreground: 222 15% 13%;
 
     /* Purple/Blue primary inspired by reference */
-    --primary: 250 84% 60%;
+    --primary: 263 70% 50%;
     --primary-foreground: 0 0% 98%;
     --primary-light: 252 100% 85%;
     --primary-glow: 250 100% 70%;
 
-    /* Orange accent color from reference */
-    --accent: 38 92% 50%;
-    --accent-foreground: 0 0% 98%;
-    --accent-light: 38 100% 85%;
-    --accent-glow: 38 100% 60%;
+    /* Orange/Yellow accent color from reference */
+    --accent: 45 93% 58%;
+    --accent-foreground: 0 0% 13%;
+    --accent-light: 45 100% 75%;
+    --accent-glow: 45 100% 65%;
 
     --secondary: 220 14% 96%;
     --secondary-foreground: 222 15% 13%;
@@ -45,9 +45,9 @@ All colors MUST be HSL. Using purple/blue primary with orange accents.
     --radius: 0.75rem;
 
     /* Gradients for modern effects */
-    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-glow)));
-    --gradient-accent: linear-gradient(135deg, hsl(var(--accent)), hsl(var(--accent-glow)));
-    --gradient-hero: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--primary-light)) 50%, hsl(var(--accent-light)) 100%);
+    --gradient-primary: linear-gradient(135deg, hsl(263, 70%, 50%), hsl(271, 81%, 60%));
+    --gradient-accent: linear-gradient(135deg, hsl(45, 93%, 58%), hsl(45, 100%, 75%));
+    --gradient-hero: linear-gradient(135deg, hsl(263, 70%, 50%) 0%, hsl(271, 81%, 60%) 50%, hsl(280, 87%, 65%) 100%);
     --gradient-card: linear-gradient(145deg, hsl(var(--card)) 0%, hsl(var(--secondary)) 100%);
 
     /* Shadows for depth */
@@ -89,15 +89,15 @@ All colors MUST be HSL. Using purple/blue primary with orange accents.
     --popover-foreground: 210 40% 98%;
 
     /* Darker theme with maintained color scheme */
-    --primary: 250 100% 70%;
-    --primary-foreground: 222 47% 11%;
-    --primary-light: 252 100% 80%;
-    --primary-glow: 250 100% 75%;
+    --primary: 263 70% 60%;
+    --primary-foreground: 0 0% 98%;
+    --primary-light: 271 81% 70%;
+    --primary-glow: 280 87% 65%;
 
-    --accent: 38 92% 55%;
-    --accent-foreground: 222 47% 11%;
-    --accent-light: 38 100% 75%;
-    --accent-glow: 38 100% 65%;
+    --accent: 45 93% 65%;
+    --accent-foreground: 0 0% 13%;
+    --accent-light: 45 100% 80%;
+    --accent-glow: 45 100% 75%;
 
     --secondary: 220 9% 20%;
     --secondary-foreground: 210 40% 98%;
@@ -113,9 +113,9 @@ All colors MUST be HSL. Using purple/blue primary with orange accents.
     --ring: 250 100% 70%;
 
     /* Dark mode gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-glow)));
-    --gradient-accent: linear-gradient(135deg, hsl(var(--accent)), hsl(var(--accent-glow)));
-    --gradient-hero: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--primary-light)) 50%, hsl(var(--accent-light)) 100%);
+    --gradient-primary: linear-gradient(135deg, hsl(263, 70%, 60%), hsl(271, 81%, 70%));
+    --gradient-accent: linear-gradient(135deg, hsl(45, 93%, 65%), hsl(45, 100%, 80%));
+    --gradient-hero: linear-gradient(135deg, hsl(263, 70%, 60%) 0%, hsl(271, 81%, 70%) 50%, hsl(280, 87%, 75%) 100%);
     --gradient-card: linear-gradient(145deg, hsl(var(--card)) 0%, hsl(var(--secondary)) 100%);
 
     /* Enhanced shadows for dark mode */
