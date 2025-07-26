@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { ExternalLink, Github, TrendingUp, Users, Zap, Shield } from "lucide-react";
+import { TrendingUp, Users, Zap, Shield } from "lucide-react";
 
 const Projects = () => {
   const projects = [
@@ -181,16 +181,6 @@ const Projects = () => {
                     </div>
                   </div>
 
-                  {/* Action Buttons */}
-                  <div className="flex gap-3 pt-4">
-                    <Button size="sm" variant="outline" className="flex-1">
-                      <ExternalLink className="w-4 h-4 mr-2" />
-                      View Details
-                    </Button>
-                    <Button size="sm" variant="outline">
-                      <Github className="w-4 h-4" />
-                    </Button>
-                  </div>
                 </CardContent>
               </Card>
             </motion.div>

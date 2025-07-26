@@ -1,11 +1,13 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { Menu, X, Download } from "lucide-react";
+import { Menu, X, Sun, Moon } from "lucide-react";
+import { useTheme } from "next-themes";
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const { theme, setTheme } = useTheme();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -74,16 +76,22 @@ const Navigation = () => {
             ))}
           </div>
 
-          {/* Desktop CTA Button */}
+          {/* Desktop Theme Toggle */}
           <motion.div
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.3 }}
             className="hidden md:block"
           >
-            <Button size="sm" className="btn-glow">
-              <Download className="w-4 h-4 mr-2" />
-              Resume
+            <Button 
+              size="sm" 
+              variant="outline"
+              onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
+              className="w-10 h-10 p-0"
+            >
+              <Sun className="h-4 w-4 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
+              <Moon className="absolute h-4 w-4 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
+              <span className="sr-only">Toggle theme</span>
             </Button>
           </motion.div>
 
@@ -124,9 +132,15 @@ const Navigation = () => {
               </motion.button>
             ))}
             <div className="px-4 pt-4">
-              <Button size="sm" className="w-full btn-glow">
-                <Download className="w-4 h-4 mr-2" />
-                Download Resume
+              <Button 
+                size="sm" 
+                variant="outline"
+                onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
+                className="w-full"
+              >
+                <Sun className="h-4 w-4 mr-2 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
+                <Moon className="absolute h-4 w-4 mr-2 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
+                Toggle Theme
               </Button>
             </div>
           </div>

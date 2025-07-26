@@ -84,14 +84,14 @@ const Contact = () => {
           </p>
         </motion.div>
 
-        <div className="max-w-6xl mx-auto grid lg:grid-cols-3 gap-8">
+        <div className="max-w-4xl mx-auto">
           {/* Contact Information */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="lg:col-span-1 space-y-6"
+            className="space-y-6"
           >
             <div>
               <h3 className="text-2xl font-bold text-foreground mb-4">Contact Information</h3>
@@ -154,74 +154,6 @@ const Contact = () => {
             </motion.div>
           </motion.div>
 
-          {/* Contact Form */}
-          <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            viewport={{ once: true }}
-            className="lg:col-span-2"
-          >
-            <Card className="card-hover">
-              <CardHeader>
-                <CardTitle className="text-2xl">Send a Message</CardTitle>
-                <CardDescription>
-                  I'll get back to you as soon as possible. Let's start a conversation!
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <form onSubmit={handleSubmit} className="space-y-6">
-                  <div className="grid md:grid-cols-2 gap-4">
-                    <div className="space-y-2">
-                      <Label htmlFor="name">Name</Label>
-                      <Input
-                        id="name"
-                        name="name"
-                        placeholder="Your full name"
-                        value={formData.name}
-                        onChange={handleChange}
-                        required
-                        className="transition-all duration-300 focus:scale-105"
-                      />
-                    </div>
-                    <div className="space-y-2">
-                      <Label htmlFor="email">Email</Label>
-                      <Input
-                        id="email"
-                        name="email"
-                        type="email"
-                        placeholder="your.email@example.com"
-                        value={formData.email}
-                        onChange={handleChange}
-                        required
-                        className="transition-all duration-300 focus:scale-105"
-                      />
-                    </div>
-                  </div>
-                  <div className="space-y-2">
-                    <Label htmlFor="message">Message</Label>
-                    <Textarea
-                      id="message"
-                      name="message"
-                      placeholder="Tell me about your project or just say hello..."
-                      rows={6}
-                      value={formData.message}
-                      onChange={handleChange}
-                      required
-                      className="transition-all duration-300 focus:scale-105 resize-none"
-                    />
-                  </div>
-                  <Button 
-                    type="submit" 
-                    className="w-full md:w-auto btn-glow group"
-                  >
-                    <Send className="w-5 h-5 mr-2 group-hover:translate-x-1 transition-transform duration-300" />
-                    Send Message
-                  </Button>
-                </form>
-              </CardContent>
-            </Card>
-          </motion.div>
         </div>
 
         {/* Additional CTA */}
