@@ -14,7 +14,7 @@ export default defineConfig(({ mode }) => ({
     mode === 'development' &&
     componentTagger(),
   ].filter(Boolean),
-  base: '/ankit-pithalia-dev/',
+  base: mode === 'production' ? '/ankit-pithalia-dev/' : '/',
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),

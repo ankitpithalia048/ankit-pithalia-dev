@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { TypeAnimation } from "react-type-animation";
 import { Button } from "@/components/ui/button";
 import { Download, Mail } from "lucide-react";
-
+ 
 const Hero = () => {
 
   return (
@@ -72,7 +72,7 @@ const Hero = () => {
               transition={{ duration: 0.6, delay: 0.6 }}
               className="text-2xl md:text-3xl font-semibold text-white/90 mb-8"
             >
-              An UI UX Designer
+              Sr. Software Engineer 
             </motion.h2>
 
             {/* Description */}
@@ -97,7 +97,7 @@ const Hero = () => {
             >
               <Button size="lg" className="bg-yellow-400 hover:bg-yellow-500 text-gray-900 font-semibold">
                 <Download className="w-5 h-5 mr-2" />
-                Get Started
+                Download Resume
               </Button>
               <Button 
                 size="lg" 
