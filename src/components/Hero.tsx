@@ -123,7 +123,7 @@ const Hero = () => {
               <div className="relative w-56 h-56 sm:w-72 sm:h-72 lg:w-80 lg:h-80 rounded-full overflow-visible flex justify-center">
                 <div className="w-full h-full rounded-full overflow-hidden">
                   <img
-                    src={`${window.location.origin}/hero3.png`}
+                    src={`${import.meta.env.BASE_URL}hero3.png`}
                     alt="Profile picture of Ankit Kumar Pithalia"
                     className="w-full h-full object-cover object-top rounded-full"
                   />
