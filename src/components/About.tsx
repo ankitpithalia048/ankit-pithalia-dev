@@ -6,23 +6,27 @@ const About = () => {
     {
       icon: Code,
       title: "Full-Stack Development",
-      description: "Expert in Java, Spring Boot, ReactJS, and modern web technologies"
+      description:
+        "Expert in Java, Spring Boot, ReactJS, and modern web technologies",
     },
     {
       icon: Cloud,
       title: "Cloud Architecture",
-      description: "AWS certified with hands-on experience in serverless and containerized solutions"
+      description:
+        "AWS certified with hands-on experience in serverless and containerized solutions",
     },
     {
       icon: Database,
       title: "System Design",
-      description: "Designing scalable, resilient systems with proper observability and monitoring"
+      description:
+        "Designing scalable, resilient systems with proper observability and monitoring",
     },
     {
       icon: Lightbulb,
       title: "Innovation",
-      description: "Passionate about adopting new technologies and solving complex problems"
-    }
+      description:
+        "Passionate about adopting new technologies and solving complex problems",
+    },
   ];
 
   return (
@@ -41,18 +45,20 @@ const About = () => {
                 About Me
               </span>
             </div>
-            
+
             <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
               Designing Solutions,{" "}
               <span className="text-gradient bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
                 Not Just Visuals
               </span>
             </h2>
-            
+
             <p className="text-muted-foreground text-lg leading-relaxed mb-8">
-              Result-oriented Software Developer with 4+ years of experience in full-stack development. 
-              Skilled in Java, AWS, DevOps, and enterprise software architecture. Passionate about writing 
-              clean, testable code and solving real-world problems with scalable technology.
+              Result-oriented Software Developer with 4+ years of experience in
+              full-stack development. Skilled in Java, AWS, DevOps, and
+              enterprise software architecture. Passionate about writing clean,
+              testable code and solving real-world problems with scalable
+              technology.
             </p>
 
             <div className="space-y-6">
@@ -69,8 +75,12 @@ const About = () => {
                     <feature.icon className="w-6 h-6 text-primary" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-foreground mb-2">{feature.title}</h3>
-                    <p className="text-muted-foreground">{feature.description}</p>
+                    <h3 className="font-semibold text-foreground mb-2">
+                      {feature.title}
+                    </h3>
+                    <p className="text-muted-foreground">
+                      {feature.description}
+                    </p>
                   </div>
                 </motion.div>
               ))}
@@ -93,10 +103,14 @@ const About = () => {
                 transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
                 className="absolute inset-0 rounded-full bg-gradient-to-r from-primary/20 to-accent/20"
               />
-              
+
               {/* Profile Image Placeholder */}
               <div className="absolute inset-4 rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center text-white text-6xl font-bold">
-                AKP
+                <img
+                  src="/about.png"
+                  alt="Profile about picture of Ankit Kumar Pithalia"
+                  className="w-full h-full object-cover rounded-full"
+                />
               </div>
 
               {/* Floating Tech Icons */}
@@ -107,7 +121,7 @@ const About = () => {
               >
                 <span className="text-2xl">☁️</span>
               </motion.div>
-              
+
               <motion.div
                 animate={{ y: [10, -10, 10] }}
                 transition={{ duration: 4, repeat: Infinity, delay: 1 }}
@@ -115,7 +129,7 @@ const About = () => {
               >
                 <span className="text-2xl">⚡</span>
               </motion.div>
-              
+
               <motion.div
                 animate={{ y: [-10, 10, -10] }}
                 transition={{ duration: 4, repeat: Infinity, delay: 2 }}
@@ -123,7 +137,7 @@ const About = () => {
               >
                 <span className="text-2xl">🚀</span>
               </motion.div>
-              
+
               <motion.div
                 animate={{ y: [10, -10, 10] }}
                 transition={{ duration: 4, repeat: Infinity, delay: 3 }}
@@ -143,9 +157,11 @@ const About = () => {
                 className="card-hover p-6 text-center"
               >
                 <div className="text-3xl font-bold text-primary mb-2">4+</div>
-                <div className="text-sm text-muted-foreground">Years Experience</div>
+                <div className="text-sm text-muted-foreground">
+                  Years Experience
+                </div>
               </motion.div>
-              
+
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -153,10 +169,12 @@ const About = () => {
                 viewport={{ once: true }}
                 className="card-hover p-6 text-center"
               >
-                <div className="text-3xl font-bold text-accent mb-2">50+</div>
-                <div className="text-sm text-muted-foreground">Projects Delivered</div>
+                <div className="text-3xl font-bold text-accent mb-2">5+</div>
+                <div className="text-sm text-muted-foreground">
+                  Projects Delivered
+                </div>
               </motion.div>
-              
+
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -165,9 +183,11 @@ const About = () => {
                 className="card-hover p-6 text-center"
               >
                 <div className="text-3xl font-bold text-primary mb-2">70%</div>
-                <div className="text-sm text-muted-foreground">Performance Boost</div>
+                <div className="text-sm text-muted-foreground">
+                  Performance Boost
+                </div>
               </motion.div>
-              
+
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -176,7 +196,9 @@ const About = () => {
                 className="card-hover p-6 text-center"
               >
                 <div className="text-3xl font-bold text-accent mb-2">90%</div>
-                <div className="text-sm text-muted-foreground">Test Coverage</div>
+                <div className="text-sm text-muted-foreground">
+                  Test Coverage
+                </div>
               </motion.div>
             </div>
           </motion.div>
