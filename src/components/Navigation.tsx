@@ -68,8 +68,8 @@ const Navigation = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 onClick={() => scrollToSection(link.href)}
-                className="text-muted-foreground hover:text-primary transition-colors duration-300 font-medium relative group"
-              >
+                className="text-gray-600 dark:text-gray-300 hover:text-gray-800 dark:hover:text-white transition-colors duration-300 font-medium relative group"
+            >
                 {link.name}
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
               </motion.button>
