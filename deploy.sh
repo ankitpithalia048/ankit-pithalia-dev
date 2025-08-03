@@ -1,9 +1,6 @@
 #!/usr/bin/env bash
 
-set -e  # Exit immediately on error
-
-# Optional: Print each command (for debugging)
-# set -x
+set -e  # Exit on error
 
 echo "📦 Installing dependencies..."
 npm install
@@ -11,11 +8,13 @@ npm install
 echo "🛠️  Building the project..."
 npm run build
 
-DEPLOY_DIR=".deploy-temp"
+# Save full path of current directory
+PROJECT_DIR=$(pwd)
+DEPLOY_DIR="$PROJECT_DIR/../.deploy-temp"
 
-echo "📁 Creating temporary deploy directory..."
+echo "📁 Creating temporary deploy directory at $DEPLOY_DIR..."
 rm -rf "$DEPLOY_DIR"
-mkdir "$DEPLOY_DIR"
+mkdir -p "$DEPLOY_DIR"
 cp -r dist/* "$DEPLOY_DIR/"
 
 echo "🌿 Switching to gh-pages branch..."
@@ -28,19 +27,12 @@ else
   git reset --hard
 fi
 
-# Confirm we are on gh-pages
-CURRENT_BRANCH=$(git rev-parse --abbrev-ref HEAD)
-if [[ "$CURRENT_BRANCH" != "gh-pages" ]]; then
-  echo "❌ Failed to switch to gh-pages branch."
-  exit 1
-fi
-
 echo "🧹 Cleaning old files in gh-pages branch..."
 git rm -rf . > /dev/null 2>&1 || true
 git clean -fd
 
 echo "📤 Copying new build from $DEPLOY_DIR..."
-cp -r "../$DEPLOY_DIR/"* .
+cp -r "$DEPLOY_DIR/"* .
 
 echo "🚫 Creating .nojekyll to disable Jekyll processing..."
 touch .nojekyll
@@ -51,9 +43,8 @@ git commit -m "Deploy to GitHub Pages: $(date '+%Y-%m-%d %H:%M:%S')" || echo "�
 git push origin gh-pages --force
 
 echo "🧹 Cleaning up temp files and switching back to main..."
-cd ..
-rm -rf "$DEPLOY_DIR"
 git checkout main
+rm -rf "$DEPLOY_DIR"
 
 echo "✅ Deployment complete!"
 echo "🌍 Visit: https://ankitpithalia048.github.io/ankit-pithalia-dev/"
