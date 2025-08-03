@@ -107,7 +107,7 @@ const About = () => {
               {/* Profile Image Placeholder */}
               <div className="absolute inset-4 rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center text-white text-6xl font-bold">
                 <img
-                  src="/about.png"
+                 src={`${process.env.PUBLIC_URL}/about.png`}
                   alt="Profile about picture of Ankit Kumar Pithalia"
                   className="w-full h-full object-cover rounded-full"
                 />
