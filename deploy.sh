@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-set -e  # Exit immediately on error
+# set -e  # Exit immediately on error
 
 # Optional: Print each command (for debugging)
 # set -x
@@ -34,8 +34,10 @@ if [[ "$CURRENT_BRANCH" != "gh-pages" ]]; then
 fi
 
 echo "🧹 Cleaning old files in gh-pages branch..."
-git rm -rf . > /dev/null 2>&1 || true
-find . -maxdepth 1 ! -name ".git" ! -name "." -exec rm -rf {} +
+# git rm -rf . > /dev/null 2>&1 || true
+# find . -maxdepth 1 ! -name ".git" ! -name "." -exec rm -rf {} +
+git rm -rf .
+git clean -fd
 
 echo "📤 Copying new build from temp-deploy..."
 cp -r ../temp-deploy/* .
