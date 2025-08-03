@@ -94,17 +94,23 @@ const Hero = () => {
                 size="lg"
                 className="bg-yellow-400 hover:bg-yellow-500 text-gray-900 font-semibold"
               >
-                <Download className="w-5 h-5 mr-2" />
-                Download Resume
+                  <Download className="w-5 h-5 mr-2" />
+                <a
+                  href="https://drive.google.com/file/d/1poLMR3tx3SQe1NsnIn-lvYDzY6XgPRmA/view?usp=drive_link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Download Resume
+                </a>
               </Button>
-              <Button
+              {/* <Button
                 size="lg"
                 variant="outline"
                 className="bg-white/10 backdrop-blur-sm border-white/30 text-white hover:bg-white/20 transition-all duration-300"
               >
                 <Mail className="w-5 h-5 mr-2" />
                 My Projects
-              </Button>
+              </Button> */}
             </motion.div>
           </div>
           {/* Right Content - Profile Image */}

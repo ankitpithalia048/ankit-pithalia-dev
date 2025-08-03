@@ -149,7 +149,13 @@ const Contact = () => {
             >
               <Button className="w-full btn-glow">
                 <Download className="w-5 h-5 mr-2" />
-                Download Resume
+                <a
+                  href="https://drive.google.com/file/d/1poLMR3tx3SQe1NsnIn-lvYDzY6XgPRmA/view?usp=drive_link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Download Resume
+                </a>
               </Button>
             </motion.div>
           </motion.div>
