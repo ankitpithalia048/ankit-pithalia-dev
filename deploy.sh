@@ -2,19 +2,21 @@
 
 set -e  # Exit immediately on error
 
+# Optional: Print each command (for debugging)
+# set -x
+
 echo "📦 Installing dependencies..."
 npm install
 
 echo "🛠️  Building the project..."
 npm run build
 
-# Store absolute path to project root
-PROJECT_ROOT=$(pwd)
+DEPLOY_DIR=".deploy-temp"
 
-echo "📁 Creating temp-deploy directory..."
-rm -rf temp-deploy
-mkdir temp-deploy
-cp -r dist/* temp-deploy/
+echo "📁 Creating temporary deploy directory..."
+rm -rf "$DEPLOY_DIR"
+mkdir "$DEPLOY_DIR"
+cp -r dist/* "$DEPLOY_DIR/"
 
 echo "🌿 Switching to gh-pages branch..."
 git fetch origin
@@ -34,23 +36,24 @@ if [[ "$CURRENT_BRANCH" != "gh-pages" ]]; then
 fi
 
 echo "🧹 Cleaning old files in gh-pages branch..."
-git rm -rf . || true
-git clean -fd || true
+git rm -rf . > /dev/null 2>&1 || true
+git clean -fd
 
-echo "📤 Copying new build from temp-deploy..."
-cp -r "$PROJECT_ROOT/temp-deploy/"* .
+echo "📤 Copying new build from $DEPLOY_DIR..."
+cp -r "../$DEPLOY_DIR/"* .
 
 echo "🚫 Creating .nojekyll to disable Jekyll processing..."
 touch .nojekyll
 
 echo "📝 Committing and pushing changes..."
 git add .
-git commit -m "Deploy to GitHub Pages: $(date '+%Y-%m-%d %H:%M:%S')" || echo "No changes to commit."
+git commit -m "Deploy to GitHub Pages: $(date '+%Y-%m-%d %H:%M:%S')" || echo "⚠️  No changes to commit."
 git push origin gh-pages --force
 
 echo "🧹 Cleaning up temp files and switching back to main..."
+cd ..
+rm -rf "$DEPLOY_DIR"
 git checkout main
-rm -rf "$PROJECT_ROOT/temp-deploy"
 
 echo "✅ Deployment complete!"
 echo "🌍 Visit: https://ankitpithalia048.github.io/ankit-pithalia-dev/"
