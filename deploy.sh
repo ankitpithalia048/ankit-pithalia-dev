@@ -1,15 +1,15 @@
 #!/usr/bin/env bash
 
-# set -e  # Exit immediately on error
-
-# Optional: Print each command (for debugging)
-# set -x
+set -e  # Exit immediately on error
 
 echo "📦 Installing dependencies..."
 npm install
 
 echo "🛠️  Building the project..."
 npm run build
+
+# Store absolute path to project root
+PROJECT_ROOT=$(pwd)
 
 echo "📁 Creating temp-deploy directory..."
 rm -rf temp-deploy
@@ -34,13 +34,11 @@ if [[ "$CURRENT_BRANCH" != "gh-pages" ]]; then
 fi
 
 echo "🧹 Cleaning old files in gh-pages branch..."
-# git rm -rf . > /dev/null 2>&1 || true
-# find . -maxdepth 1 ! -name ".git" ! -name "." -exec rm -rf {} +
-git rm -rf .
-git clean -fd
+git rm -rf . || true
+git clean -fd || true
 
 echo "📤 Copying new build from temp-deploy..."
-cp -r ../temp-deploy/* .
+cp -r "$PROJECT_ROOT/temp-deploy/"* .
 
 echo "🚫 Creating .nojekyll to disable Jekyll processing..."
 touch .nojekyll
@@ -51,9 +49,8 @@ git commit -m "Deploy to GitHub Pages: $(date '+%Y-%m-%d %H:%M:%S')" || echo "No
 git push origin gh-pages --force
 
 echo "🧹 Cleaning up temp files and switching back to main..."
-cd ..
-rm -rf temp-deploy
 git checkout main
+rm -rf "$PROJECT_ROOT/temp-deploy"
 
 echo "✅ Deployment complete!"
 echo "🌍 Visit: https://ankitpithalia048.github.io/ankit-pithalia-dev/"
