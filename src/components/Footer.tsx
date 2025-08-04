@@ -148,9 +148,7 @@ const Footer = () => {
               viewport={{ once: true }}
               className="flex items-center gap-2 text-muted-foreground text-sm"
             >
-              <span>© 2025 Ankit Pithalia. Made with</span>
-              <Heart className="w-4 h-4 text-red-500 fill-current" />
-              <span>and lots of ☕</span>
+              <span>© 2025 Ankit Pithalia. Made with ❤️ and lots of ☕</span>
             </motion.div>
 
             {/* Back to Top Button */}
