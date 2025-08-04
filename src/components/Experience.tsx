@@ -7,7 +7,7 @@ const Experience = () => {
       period: "April 2023 – Present",
       title: "Senior Software Engineer",
       company: "TEKsystems Global Services",
-      location: "Remote",
+      location: "Remote - (India)",
       achievements: [
         "Led by example in enforcing code quality through PMD rules, SonarLint integration, and business logic documentation, significantly reducing technical debt and setting coding standards for the team.",
         "Spearheaded complex integrations including third-party SOAP APIs, Okta authentication and FTP with Quarkus—delivering high-impact solutions in record time, even in unfamiliar territories.",
@@ -33,7 +33,7 @@ const Experience = () => {
       period: "Aug 2021 – March 2023",
       title: "Associate Software Engineer",
       company: "TEKsystems Global Services",
-      location: "Remote",
+      location: "Remote - (India)",
       achievements: [
         "Quickly ramped up on ReactJS, contributing as a key developer for a multi-tenant SaaS-based UI renderer project",
         "Designed a JSON-driven configuration model for UI rendering, enabling scalable and reusable components across tenants",
