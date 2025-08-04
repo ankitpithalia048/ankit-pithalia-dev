@@ -3,20 +3,38 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Menu, X, Sun, Moon } from "lucide-react";
 import { useTheme } from "next-themes";
+import { useRef } from "react";
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const { theme, setTheme } = useTheme();
+  const menuRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
+      if (isOpen) {
+        setIsOpen(false); // Close menu on scroll
+      }
+    };
+
+    const handleOutsideClick = (e: MouseEvent) => {
+      if (menuRef.current && !menuRef.current.contains(e.target as Node)) {
+        setIsOpen(false); // Close menu on outside click
+      }
     };
 
     window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+    if (isOpen) {
+      document.addEventListener("mousedown", handleOutsideClick);
+    }
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      document.removeEventListener("mousedown", handleOutsideClick);
+    };
+  }, [isOpen]);
 
   const navLinks = [
     { name: "Home", href: "#home" },
@@ -28,11 +46,13 @@ const Navigation = () => {
   ];
 
   const scrollToSection = (href: string) => {
-    const element = document.querySelector(href);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
-    setIsOpen(false);
+    setIsOpen(false); // first close the menu
+    setTimeout(() => {
+      const element = document.querySelector(href);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+      }
+    }, 300); // wait for mobile menu collapse transition to complete
   };
 
   return (
@@ -104,48 +124,48 @@ const Navigation = () => {
             {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </motion.button>
         </div>
-
-        {/* Mobile Navigation */}
-        <motion.div
-          initial={{ opacity: 0, height: 0 }}
-          animate={{
-            opacity: isOpen ? 1 : 0,
-            height: isOpen ? "auto" : 0,
-          }}
-          transition={{ duration: 0.3 }}
-          className="md:hidden overflow-hidden bg-background/95 backdrop-blur-lg border-t border-border"
-        >
-          <div className="py-4 space-y-2">
-            {navLinks.map((link, index) => (
-              <motion.button
-                key={link.name}
-                initial={{ opacity: 0, x: -20 }}
-                animate={{
-                  opacity: isOpen ? 1 : 0,
-                  x: isOpen ? 0 : -20,
-                }}
-                transition={{ duration: 0.3, delay: index * 0.05 }}
-                onClick={() => scrollToSection(link.href)}
-                className="block w-full text-left px-4 py-3 text-muted-foreground hover:text-primary hover:bg-primary/5 transition-all duration-300 rounded-lg"
-              >
-                {link.name}
-              </motion.button>
-            ))}
-            <div className="px-4 pt-4">
-              <Button
-                size="sm"
-                variant="outline"
-                onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-                className="w-full"
-              >
-                <Sun className=" top-0 left-0 h-4 w-4 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
-                <Moon className=" top-0 left-0 h-4 w-4 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
-                Toggle Theme
-              </Button>
-            </div>
-          </div>
-        </motion.div>
       </div>
+      {/* Mobile Navigation */}
+      <motion.div
+        initial={{ opacity: 0, height: 0 }}
+        ref={menuRef}
+        animate={{
+          opacity: isOpen ? 1 : 0,
+          height: isOpen ? "auto" : 0,
+        }}
+        transition={{ duration: 0.3 }}
+        className="md:hidden overflow-hidden bg-background/95 backdrop-blur-lg border-t border-border"
+      >
+        <div className="py-4 space-y-2">
+          {navLinks.map((link, index) => (
+            <motion.button
+              key={link.name}
+              initial={{ opacity: 0, x: -20 }}
+              animate={{
+                opacity: isOpen ? 1 : 0,
+                x: isOpen ? 0 : -20,
+              }}
+              transition={{ duration: 0.3, delay: index * 0.05 }}
+              onClick={() => scrollToSection(link.href)}
+              className="block w-full text-left px-4 py-3 text-muted-foreground hover:text-primary hover:bg-primary/5 transition-all duration-300 rounded-lg"
+            >
+              {link.name}
+            </motion.button>
+          ))}
+          <div className="px-4 pt-4">
+            <Button
+              size="sm"
+              variant="outline"
+              onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+              className="w-full"
+            >
+              <Sun className=" top-0 left-0 h-4 w-4 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
+              <Moon className=" top-0 left-0 h-4 w-4 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
+              Toggle Theme
+            </Button>
+          </div>
+        </div>
+      </motion.div>
     </motion.nav>
   );
 };
