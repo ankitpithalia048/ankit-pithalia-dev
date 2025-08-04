@@ -7,13 +7,13 @@ const About = () => {
       icon: Code,
       title: "Full-Stack Development",
       description:
-        "Expert in Java, Spring Boot, ReactJS, and modern web technologies",
+        "Expert in Java, Quarkus, Spring Boot, ReactJS, and modern web technologies",
     },
     {
       icon: Cloud,
       title: "Cloud Architecture",
       description:
-        "AWS certified with hands-on experience in serverless and containerized solutions",
+        "Proven experience integrating AWS resources to build scalable serverless and containerized applications.",
     },
     {
       icon: Database,
@@ -53,13 +53,26 @@ const About = () => {
               </span>
             </h2>
 
-            <p className="text-muted-foreground text-lg leading-relaxed mb-8">
-              Result-oriented Software Developer with 4+ years of experience in
-              full-stack development. Skilled in Java, AWS, DevOps, and
-              enterprise software architecture. Passionate about writing clean,
-              testable code and solving real-world problems with scalable
-              technology.
-            </p>
+            <div className="text-muted-foreground text-lg leading-relaxed space-y-6 mb-8">
+              <p>
+                I'm a results-driven Software Developer with 4+ years of
+                experience building scalable, maintainable full-stack
+                applications. With a strong foundation in backend systems,
+                cloud-native architecture, and modern web technologies, I bring
+                a thoughtful, practical approach to solving complex problems. I
+                focus on writing clean, testable code and designing systems that
+                are resilient, observable, and aligned with real business goals.
+              </p>
+              <p>
+                Known for my adaptability and consistent delivery, I’ve earned
+                positive feedback from clients and stakeholders for my
+                reliability and ownership. I enjoy collaborating with
+                cross-functional teams, mentoring peers, and continuously
+                improving both product and process. I take pride not just in
+                building software, but in delivering meaningful solutions that
+                make an impact.
+              </p>
+            </div>
 
             <div className="space-y-6">
               {features.map((feature, index) => (
@@ -107,7 +120,7 @@ const About = () => {
               {/* Profile Image Placeholder */}
               <div className="absolute inset-4 rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center text-white text-6xl font-bold">
                 <img
-                src={`${import.meta.env.BASE_URL}about.png`}
+                  src={`${import.meta.env.BASE_URL}about.png`}
                   alt="Profile about picture of Ankit Kumar Pithalia"
                   className="w-full h-full object-cover rounded-full"
                 />
@@ -127,7 +140,7 @@ const About = () => {
                 transition={{ duration: 4, repeat: Infinity, delay: 1 }}
                 className="absolute -top-4 -right-4 w-16 h-16 bg-card rounded-full flex items-center justify-center shadow-lg"
               >
-                <span className="text-2xl">⚡</span>
+                <span className="text-2xl">💻</span>
               </motion.div>
 
               <motion.div
@@ -169,7 +182,7 @@ const About = () => {
                 viewport={{ once: true }}
                 className="card-hover p-6 text-center"
               >
-                <div className="text-3xl font-bold text-accent mb-2">5+</div>
+                <div className="text-3xl font-bold text-accent mb-2">4+</div>
                 <div className="text-sm text-muted-foreground">
                   Projects Delivered
                 </div>

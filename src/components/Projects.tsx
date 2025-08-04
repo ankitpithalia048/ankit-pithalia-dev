@@ -7,7 +7,7 @@ import { TrendingUp, Users, Zap, Shield } from "lucide-react";
 const Projects = () => {
   const projects = [
     {
-      title: "UNFI & Genesys Integration",
+      title: "Cloud Migration & AWS Integration – UNFI & Genesys",
       role: "Senior Software Engineer",
       company: "TEKsystems",
       description: "Built an enterprise-grade integration platform migrating from on-premises to AWS cloud infrastructure.",
@@ -19,7 +19,7 @@ const Projects = () => {
         "Achieved 90%+ test coverage with Groovy Spock and automated testing",
         "AI-assisted development with AWS Q Developer - 40% reduction in debugging time"
       ],
-      techStack: ["Java", "Quarkus", "AWS S3", "AWS Lambda", "AWS ECS", "OpenTelemetry", "Grafana", "Groovy Spock", "Postman"],
+      techStack: ["Java", "Quarkus", "AWS", "AWS S3", "AWS Lambda", "AWS ECS","AWS EKS","AWS EventBridge", "OpenTelemetry", "Grafana", "Honeycomb", "Groovy Spock", "Postman", "Terraform", "AWS Cloudformation", "GitHub", "Compass"],
       metrics: {
         performance: "70%",
         coverage: "90%",
@@ -28,9 +28,9 @@ const Projects = () => {
     },
     {
       title: "Ascension Multi-Tenant Web App",
-      role: "Associate Software Engineer", 
+      role: "Frontend Developer", 
       company: "TEKsystems",
-      description: "Developed a ReactJS-based multi-tenant architecture web application for hospital management systems.",
+      description: "Developed a ReactJS-based multi-tenant configurable web platform for enterprise applications.",
       icon: <Users className="w-6 h-6" />,
       achievements: [
         "Developed 70% of configurable UI components using React architecture",
@@ -38,7 +38,7 @@ const Projects = () => {
         "Collaborated with cross-functional teams to drive operational improvements",
         "Enhanced customer satisfaction through efficient system implementations"
       ],
-      techStack: ["ReactJS", "JavaScript", "HTML5", "CSS3", "AWS", "JSON Configuration", "Multi-tenant Architecture"],
+      techStack: ["ReactJS", "JavaScript", "HTML5", "CSS3", "JSON Configuration", "Multi-tenant Architecture", "GitLab"],
       metrics: {
         configurable: "70%",
         efficiency: "100%",

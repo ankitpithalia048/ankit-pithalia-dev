@@ -11,7 +11,7 @@ const Skills = () => {
     {
       title: "Frontend Development", 
       icon: "🎨",
-      skills: ["ReactJS", "JavaScript", "TypeScript", "HTML5", "CSS3", "Tailwind CSS"]
+      skills: ["ReactJS", "JavaScript", "TypeScript", "HTML5", "CSS3"]
     },
     {
       title: "Cloud & DevOps",
@@ -26,7 +26,7 @@ const Skills = () => {
     {
       title: "Databases",
       icon: "🗄️",
-      skills: ["PostgreSQL", "MongoDB", "Redis", "DynamoDB", "SQL Server"]
+      skills: ["PostgreSQL", "Redis", "SQL Server"]
     },
     {
       title: "Testing & Quality",
@@ -121,7 +121,7 @@ const Skills = () => {
               { skill: "AWS Cloud Services", level: 90 },
               { skill: "ReactJS & Frontend", level: 85 },
               { skill: "System Architecture", level: 88 },
-              { skill: "DevOps & Automation", level: 82 }
+              { skill: "DevOps & Automation", level: 70 }
             ].map((item, index) => (
               <div key={item.skill} className="space-y-2">
                 <div className="flex justify-between items-center">

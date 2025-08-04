@@ -9,27 +9,47 @@ const Experience = () => {
       company: "TEKsystems Global Services",
       location: "Remote",
       achievements: [
-        "Built scalable AWS-integrated systems, implemented async processing and pagination resulting in 70% performance boost",
-        "Developed observability tools using Quarkus, OpenTelemetry, and Grafana, reducing issue resolution time by 50%",
-        "Integrated third-party SOAP APIs, Okta authentication, and FTP solutions, improving application security by 60%",
-        "Led code quality improvements with PMD, JavaDoc, and SonarLint, reducing technical debt by 60%",
-        "Spearheaded AWS Q Developer integration, enabling AI-assisted development and reducing debugging by 40%"
+        "Led by example in enforcing code quality through PMD rules, SonarLint integration, and business logic documentation, significantly reducing technical debt and setting coding standards for the team.",
+        "Spearheaded complex integrations including third-party SOAP APIs, Okta authentication and FTP with Quarkus—delivering high-impact solutions in record time, even in unfamiliar territories.",
+        "Boosted backend performance by 70% through async processing and pagination, enabling faster data handling",
+        "Earned stakeholder trust through consistent delivery, proactive testing, spike research, and ownership—leading to role extension, cross-team collaboration, and expansion of the team.",
+        "Invested in continuous learning with hands-on exploration of Honeycomb, OTEL, and AI tools like AWS Q Developer, while mentoring peers and contributing to onboarding through documentation and knowledge transfer.",
       ],
-      techStack: ["Java", "Quarkus", "AWS", "Spring Boot", "OpenTelemetry", "Grafana", "Okta"]
+      techStack: [
+        "Java",
+        "Quarkus",
+        "AWS",
+        "Spring Boot",
+        "OpenTelemetry",
+        "Grafana",
+        "Honeycomb",
+        "Okta",
+        "Terraform",
+        "CI/CD",
+        "GitHub Actions",
+      ],
     },
     {
       period: "Aug 2021 – March 2023",
-      title: "Associate Software Engineer", 
+      title: "Associate Software Engineer",
       company: "TEKsystems Global Services",
       location: "Remote",
       achievements: [
-        "Developed multi-tenant web applications using ReactJS with 70% configurable UI components",
-        "Analyzed and implemented JSON-based configuration paradigm for scalable application architecture",
-        "Collaborated with cross-functional teams to drive operational improvements and enhance customer satisfaction",
-        "Demonstrated strong problem-solving abilities with timely bug fixes and feature implementations"
+        "Quickly ramped up on ReactJS, contributing as a key developer for a multi-tenant SaaS-based UI renderer project",
+        "Designed a JSON-driven configuration model for UI rendering, enabling scalable and reusable components across tenants",
+        "Implemented multilingual support with zero defects, completing ahead of schedule and improving localization strategy",
+        "Successfully deployed first MTMP tenant to production with zero support tickets, receiving client appreciation",
+        "Demonstrated strong business acumen by quickly learning ReactJS, delivering a functional application in a short span, and earning client appreciation for quality and customer-centric solutions",
       ],
-      techStack: ["ReactJS", "JavaScript", "HTML/CSS", "AWS", "JSON", "Multi-tenant Architecture"]
-    }
+      techStack: [
+        "ReactJS",
+        "Redux",
+        "JavaScript",
+        "HTML/CSS",
+        "JSON",
+        "Multi-tenant Architecture",
+      ],
+    },
   ];
 
   return (
@@ -53,7 +73,8 @@ const Experience = () => {
             </span>
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            A track record of delivering impactful solutions and driving technical excellence across diverse projects.
+            A track record of delivering impactful solutions and driving
+            technical excellence across diverse projects.
           </p>
         </motion.div>
 
@@ -78,32 +99,36 @@ const Experience = () => {
                 {/* Experience Card */}
                 <div className="card-hover p-8">
                   {/* Header */}
-                  <div className="flex flex-wrap items-start justify-between mb-6">
-                    <div>
-                      <div className="flex items-center gap-2 text-primary font-medium mb-2">
+                  <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-4 mb-6">
+                    <div className="flex-1 min-w-0">
+                      <div className="flex flex-wrap items-center gap-2 text-primary font-medium mb-2">
                         <Calendar className="w-4 h-4" />
-                        {exp.period}
+                        <span className="break-words">{exp.period}</span>
                       </div>
-                      <h3 className="text-2xl font-bold text-foreground mb-2">{exp.title}</h3>
-                      <div className="flex items-center gap-4 text-muted-foreground">
+                      <h3 className="text-2xl font-bold text-foreground break-words mb-2">
+                        {exp.title}
+                      </h3>
+                      <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4 text-muted-foreground">
                         <div className="flex items-center gap-1">
                           <Building2 className="w-4 h-4" />
-                          {exp.company}
+                          <span className="break-words">{exp.company}</span>
                         </div>
                         <div className="flex items-center gap-1">
                           <MapPin className="w-4 h-4" />
-                          {exp.location}
+                          <span className="break-words">{exp.location}</span>
                         </div>
                       </div>
                     </div>
-                    <div className="bg-accent/10 p-3 rounded-lg">
+                    <div className="shrink-0 bg-accent/10 p-3 rounded-lg self-start">
                       <TrendingUp className="w-6 h-6 text-accent" />
                     </div>
                   </div>
 
                   {/* Achievements */}
                   <div className="mb-6">
-                    <h4 className="font-semibold text-foreground mb-4">Key Achievements:</h4>
+                    <h4 className="font-semibold text-foreground mb-4">
+                      Key Achievements:
+                    </h4>
                     <ul className="space-y-3">
                       {exp.achievements.map((achievement, achIndex) => (
                         <motion.li
@@ -115,7 +140,7 @@ const Experience = () => {
                           className="flex items-start gap-3 text-muted-foreground"
                         >
                           <div className="w-2 h-2 bg-accent rounded-full mt-2 flex-shrink-0"></div>
-                          {achievement}
+                          <span className="break-words">{achievement}</span>
                         </motion.li>
                       ))}
                     </ul>
@@ -123,14 +148,19 @@ const Experience = () => {
 
                   {/* Tech Stack */}
                   <div>
-                    <h4 className="font-semibold text-foreground mb-3">Technologies Used:</h4>
+                    <h4 className="font-semibold text-foreground mb-3">
+                      Technologies Used:
+                    </h4>
                     <div className="flex flex-wrap gap-2">
                       {exp.techStack.map((tech, techIndex) => (
                         <motion.span
                           key={tech}
                           initial={{ opacity: 0, scale: 0.8 }}
                           whileInView={{ opacity: 1, scale: 1 }}
-                          transition={{ duration: 0.3, delay: techIndex * 0.05 }}
+                          transition={{
+                            duration: 0.3,
+                            delay: techIndex * 0.05,
+                          }}
                           viewport={{ once: true }}
                           className="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm font-medium"
                         >

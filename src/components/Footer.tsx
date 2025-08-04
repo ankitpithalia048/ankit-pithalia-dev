@@ -54,7 +54,7 @@ const Footer = () => {
                 </span>
               </h3>
               <p className="text-muted-foreground mb-6 max-w-md">
-                Senior Software Engineer passionate about building scalable, efficient solutions 
+                Software Developer passionate about building scalable, efficient solutions 
                 using cutting-edge technologies. Let's create something amazing together.
               </p>
               
@@ -148,7 +148,7 @@ const Footer = () => {
               viewport={{ once: true }}
               className="flex items-center gap-2 text-muted-foreground text-sm"
             >
-              <span>© 2024 Ankit Kumar Pithalia. Made with</span>
+              <span>© 2025 Ankit Pithalia. Made with</span>
               <Heart className="w-4 h-4 text-red-500 fill-current" />
               <span>and lots of ☕</span>
             </motion.div>
