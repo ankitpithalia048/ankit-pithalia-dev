@@ -96,7 +96,7 @@ const Hero = () => {
               >
                   <Download className="w-5 h-5 mr-2" />
                 <a
-                  href="https://drive.google.com/file/d/1poLMR3tx3SQe1NsnIn-lvYDzY6XgPRmA/view?usp=drive_link"
+                  href="https://drive.google.com/file/d/1dUD14DYoIo0JVz0kh9olHBmb91V7fRJZ/view?usp=drive_link"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
